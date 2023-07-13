@@ -1,7 +1,6 @@
 let gameZona = document.querySelector('.gameZone');
 let cellNum =[...Array(8).keys()];
 let cells = [];
-let cellSize = 400;
 let emptiness = {
     value: 0,
     left: 2,
@@ -10,6 +9,7 @@ let emptiness = {
 const selection = document.querySelector('select')
 let selectChoice = selection.value.slice(-1);
 let numOfCells = selectChoice ** 2;
+let cellSize = 320 / selectChoice;
 let start = document.querySelector('.start');
 let arrValue = [9, 1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -90,8 +90,8 @@ function generate() {
             // cells.splice(cells[i], 1)
         }
 
-        // cell.style.width = `${320 / selectChoice}px`
-        // cell.style.height = `${320 / selectChoice}px`
+        cellDiv.style.width = `${320 / selectChoice}px`
+        cellDiv.style.height = `${320 / selectChoice}px`
         cellDiv.style.left = `${left * cellSize}px`;
         cellDiv.style.top = `${top * cellSize}px`;
         // emptiness.left = cells[0].left;
