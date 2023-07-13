@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3 {
+  font-style: normal;
+  font-weight: normal;
+}
+a:active,
+a:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  outline: none;
+}
+input:active,
+textarea:active {
+  outline: none;
+}
+:focus {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+textarea {
+  resize: vertical;
+}
+textarea {
+  resize: horizontal;
+}
+
+body {
+    background-color: #333;
+}
+
+.gameWrap {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 1200px;
+    height: 1300px;
+    background-color: #5d9642;
+}
+.options {
+    background-color: #487534;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.optionsItem {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial;
+    font-size: 40px;
+}
+.gameZone {
+    position: relative;
+    width: 1200px;
+    height: 1200px;
+    // display: flex;
+    // flex-wrap: wrap;
+
+    
+    .cell {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 400px;
+        height: 400px;
+
+        background: rgba(255, 255, 255, 0.3);
+        border: 3px solid #333;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+        font-family: Arial;
+        cursor: pointer;
+        transition: all ease 0.2s;
+        user-select: none;
+
+    }
+    .cell:hover {
+        background: rgba(255, 255, 255, 0.6);
+        // background-color: #ffae00;
+    }
+    .cell:active {
+        background: rgba(255, 255, 255, 0.8);
+        // background-color: #ffd900;
+    }
+}
+.start {
+    background-color: #557c45;
+    border: none;
+}
+.size {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: none;
+    text-align-last: center;
+}
