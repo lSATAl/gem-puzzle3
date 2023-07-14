@@ -55,6 +55,13 @@ body {
   margin-top: 100px;
   width: 320px;
   height: 370px;
+  transition: all 0.3s ease 0s;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .options {
@@ -63,37 +70,58 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.options button {
+
+.info {
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 320px;
+  /* height: 100%; */
+  /* background-color: #fff; */
+  /* padding: 126px 0px 30px 0px; */
+  transition: all 0.3s ease 0s;
+  overflow: auto hidden;
+  z-index: 1;
+}
+.info button {
   color: #fff;
 }
-.options select {
+.info select {
   color: #fff;
 }
-.options select option {
+.info select option {
   color: #fff;
 }
-.options select .optVal1 {
+.info select .optVal1 {
   background: rgba(50, 255, 0, 0.5);
 }
-.options select .optVal2 {
+.info select .optVal2 {
   background: rgba(179, 255, 0, 0.5);
 }
-.options select .optVal3 {
+.info select .optVal3 {
   background: rgba(238, 255, 0, 0.5);
 }
-.options select .optVal4 {
+.info select .optVal4 {
   background: rgba(255, 217, 0, 0.5);
 }
-.options select .optVal5 {
+.info select .optVal5 {
   background: rgba(255, 136, 0, 0.5);
 }
-.options select .optVal6 {
+.info select .optVal6 {
   background: rgba(255, 0, 0, 0.5);
 }
 
 .optionsItem {
-  width: 100px;
+  width: 120px;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -101,12 +129,15 @@ body {
   text-align: center;
   font-family: Arial;
   font-size: 16px;
+  color: #fff;
+  cursor: pointer;
 }
 
 .gameZone {
   position: relative;
   width: 320px;
   height: 320px;
+  transition: all 0.3s ease 0s;
 }
 .gameZone .cell {
   position: absolute;
@@ -123,7 +154,7 @@ body {
   font-size: 32px;
   font-family: Arial;
   cursor: pointer;
-  transition: all ease 0.2s;
+  transition: all 0.3s ease 0s;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -138,13 +169,74 @@ body {
 .start {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .size {
-  background: #333;
+  width: 60px;
   display: flex;
   justify-content: center;
+  background: none;
   border: none;
   -moz-text-align-last: center;
        text-align-last: center;
+  cursor: pointer;
+}
+
+.hiden {
+  display: none;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.zeroHeight {
+  height: 0px;
+}
+
+.header_burger {
+  display: block;
+  z-index: 5;
+  position: relative;
+  width: 20px;
+  height: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.header_burger::before,
+.header_burger::after {
+  left: 0;
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  transition: all 0.3s ease 0s;
+  background-color: #fff;
+}
+
+.header_burger::before,
+.header_burger::after {
+  content: "";
+}
+
+.header_burger::before {
+  top: 0;
+}
+
+.header_burger::after {
+  bottom: 0;
+}
+
+.header_burger span {
+  top: 50%;
+  transform: scale(1) translate(0px, -50%);
+}
+
+.header_burger._active {
+  transform: rotate(-90deg);
+}
+
+._back {
+  background-color: rgba(255, 255, 255, 0.5);
 }

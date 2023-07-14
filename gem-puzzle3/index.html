@@ -7,22 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="gameWrap">
-        <div class="options">
-            <button class="start optionsItem">START</button>
-            <div class="count optionsItem">Ходы : 0</div>
-            <div class="timer optionsItem">00:00:00</div>
-            <select class="size optionsItem">
-                <option class="option optVal1" >3x3</option>
-                <option class="option optVal2" >4x4</option>
-                <option class="option optVal3" >5x5</option>
-                <option class="option optVal4" >6x6</option>
-                <option class="option optVal5" >7x7</option>
-                <option class="option optVal6" >8x8</option>
-
-            </select>
+    <div class="gameWrap _back">
+        <div class="header">
+            <div class="info">
+                <button class="start optionsItem">START</button>
+                <select class="size optionsItem">
+                    <option class="option optVal1" >3x3</option>
+                    <option class="option optVal2" >4x4</option>
+                    <option class="option optVal3" >5x5</option>
+                    <option class="option optVal4" >6x6</option>
+                    <option class="option optVal5" >7x7</option>
+                    <option class="option optVal6" >8x8</option>
+                </select>
+                <div class="saveGame optionsItem">Save Game</div>
+                <div class="best optionsItem">Best scores</div>
+                <div class="rules optionsItem">Rules</div>
+            </div>
+            <div class="options">
+                <div class="count optionsItem">Ходы : 0</div>
+                <div class="header_burger _active">
+                    <span></span>
+                </div>
+                <div class="timer optionsItem">00:00:00</div>
+            </div>
         </div>
-        <div class="gameZone">
+        
+        <div class="gameZone hiden">
             <!-- <div class="cell" id="1">1</div>
             <div class="cell" id="2">2</div>
             <div class="cell" id="3">3</div>

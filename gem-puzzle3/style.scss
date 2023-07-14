@@ -48,6 +48,13 @@ body {
     width: 320px;
     height: 370px;
     // background-color: #5d9642;
+    transition: all 0.3s ease 0s;
+    border-radius: 10px;
+
+}
+.header {
+    display: flex;
+    justify-content: space-between;
 }
 .options {
     color: #fff;
@@ -56,6 +63,28 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.info {
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 320px;
+    /* height: 100%; */
+    /* background-color: #fff; */
+    /* padding: 126px 0px 30px 0px; */
+    transition: all 0.3s ease 0s;
+    overflow: auto hidden;
+    z-index: 1;
+
     button {
         color: #fff;
     }
@@ -87,6 +116,7 @@ body {
         }
     }
 }
+
 // select option[value="1"] {
 //     background: rgba(100, 100, 100, 0.3);
 //   }
@@ -101,7 +131,7 @@ body {
 // }
 
 .optionsItem {
-    width: 100px;
+    width: 120px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -109,6 +139,8 @@ body {
     text-align: center;
     font-family: Arial;
     font-size: 16px;
+    color: #fff;
+    cursor: pointer;
 }
 .gameZone {
     position: relative;
@@ -116,6 +148,7 @@ body {
     height: 320px;
     // display: flex;
     // flex-wrap: wrap;
+    transition: all 0.3s ease 0s;
 
     
     .cell {
@@ -135,7 +168,7 @@ body {
         font-size: 32px;
         font-family: Arial;
         cursor: pointer;
-        transition: all ease 0.2s;
+        transition: all 0.3s ease 0s;
         user-select: none;
 
     }
@@ -152,13 +185,71 @@ body {
     // background-color: #557c45;
     background: none;
     border: none;
+    cursor: pointer;
 }
 .size {
-    background: #333;
+    width: 60px;
+    // -webkit-appearance: none;
+    // background: #333;
     // height: 100px;
     display: flex;
     justify-content: center;
-    // background: none;
+    background: none;
     border: none;
     text-align-last: center;
+    cursor: pointer;
+
 }
+.hiden {
+    display: none;
+}
+.opacity {
+    opacity: 0;
+}
+.zeroHeight {
+    height: 0px;
+}
+
+.header_burger {
+    display: block;
+    z-index: 5;
+    position: relative;
+    width: 20px;
+    height: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+//   .header_burger span,
+  .header_burger::before,
+  .header_burger::after {
+    left: 0;
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    background-color: #fff;
+  }
+  .header_burger::before,
+  .header_burger::after {
+    content: "";
+  }
+  .header_burger::before {
+    top: 0;
+  }
+  .header_burger::after {
+    bottom: 0;
+  }
+  .header_burger span {
+    top: 50%;
+    -webkit-transform: scale(1) translate(0px, -50%);
+            transform: scale(1) translate(0px, -50%);
+  }
+  .header_burger._active {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  ._back {
+    background-color: rgba(255, 255, 255, 0.5);
+  }

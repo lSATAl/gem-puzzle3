@@ -1,4 +1,24 @@
+const burgerMenu = document.querySelector('.header_burger');
+const gameWrap = document.querySelector('.gameWrap');
+const info = document.querySelector('.info');
 let gameZona = document.querySelector('.gameZone');
+let isPaused = false;
+
+burgerMenu.addEventListener('click', function (e) {
+    burgerMenu.classList.toggle('_active');
+    gameWrap.classList.toggle('_back');
+    info.classList.toggle('zeroHeight');
+    info.classList.toggle('hiden');
+    gameZona.classList.toggle('hiden');
+    if(isPaused == true) {
+        isPaused = false;
+    } else {
+        isPaused = true;
+
+    }
+  });
+
+
 
 let cells = [];
 let emptiness = {
@@ -68,6 +88,13 @@ function generate() {
         left: 2,
         top: 2,
     }
+
+    gameWrap.classList.toggle('_back');
+    gameZona.classList.remove('hiden');
+    info.classList.toggle('zeroHeight');
+    info.classList.toggle('hiden');
+    isPaused = false;
+
     selectChoice = selection.value.slice(-1);
     cellSize = 320 / selectChoice;
     numOfCells = selectChoice ** 2;
@@ -122,6 +149,7 @@ function generate() {
 }
 
 //Секундомер
+
 let tictac;
 let S = '00', M = '00', H = '00';
 let vivod = '';
@@ -133,26 +161,29 @@ function timer(){
     vivod = '';
     
     tictac = setInterval(function(){
-      //Плюсик перед строкой преобразует его в число,мания вне хогвартса
-      S = +S +1;
-      //Если результат меньше 10, прибавляем впереди строку '0'
-      if( S < 10 ) { S = '0' + S; }
-      if( S == 60 ) {
-        S = '00';
-        //Как только секунд стало 60, добавляем +1 к минутам
-        M = +M + 1;
-        //Дальше то же самое, что и для секунд
-        if( M < 10 ) { M = '0' + M; }
-        if( M == 60 ) {
-          //Как только минут стало 60, добавляем +1 к часам.
-          M = '00';
-          H = +H + 1;
-          if( H < 10 ) { H = '0' + H; }
+        if(!isPaused) {
+            //Плюсик перед строкой преобразует его в число,мания вне хогвартса
+            S = +S +1;
+            //Если результат меньше 10, прибавляем впереди строку '0'
+            if( S < 10 ) { S = '0' + S; }
+            if( S == 60 ) {
+                S = '00';
+            //Как только секунд стало 60, добавляем +1 к минутам
+                M = +M + 1;
+            //Дальше то же самое, что и для секунд
+            if( M < 10 ) { M = '0' + M; }
+            if( M == 60 ) {
+            //Как только минут стало 60, добавляем +1 к часам.
+                M = '00';
+                H = +H + 1;
+            if( H < 10 ) { H = '0' + H; }
         }
       }
       
         vivod = H + ':' + M + ':' + S;
         timerForm.innerHTML = vivod;
+        }
+      
       //Тикает всё через одну функцию, раз в секунду.
     },1000);
     
