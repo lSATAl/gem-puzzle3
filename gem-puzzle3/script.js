@@ -1,5 +1,5 @@
 let gameZona = document.querySelector('.gameZone');
-let cellNum =[...Array(8).keys()];
+
 let cells = [];
 let emptiness = {
     value: 0,
@@ -9,9 +9,12 @@ let emptiness = {
 const selection = document.querySelector('select')
 let selectChoice = selection.value.slice(-1);
 let numOfCells = selectChoice ** 2;
+let cellNum =[...Array(numOfCells+1).keys()];
+cellNum = cellNum.slice(1)
+// cellNum[0] = cellNum.length;
 let cellSize = 320 / selectChoice;
 let start = document.querySelector('.start');
-let arrValue = [9, 1, 2, 3, 4, 5, 6, 7, 8];
+// let arrValue = [9, 1, 2, 3, 4, 5, 6, 7, 8];
 let timerForm = document.querySelector('.timer');
 let count = document.querySelector('.count');
 let step = 0;
@@ -65,6 +68,15 @@ function generate() {
         left: 2,
         top: 2,
     }
+    selectChoice = selection.value.slice(-1);
+    cellSize = 320 / selectChoice;
+    numOfCells = selectChoice ** 2;
+    let cellNum =[...Array(numOfCells+1).keys()]; //временно
+    cellNum = cellNum.slice(1) //временно
+    // cellNum =[...Array(numOfCells).keys()];
+    // cellNum[0] = cellNum.length;
+    arrValue = cellNum;
+
     arrValue.sort(() => Math.random() - 0.5)
     for (let i = 0; i < arrValue.length; i++) {
         let value = arrValue[i];
@@ -87,13 +99,13 @@ function generate() {
             top: top,
             element: cellDiv
         });
-        if (value === 9) {
+        if (value === arrValue.length) {
             emptiness.left = cells[i].left;
             emptiness.top = cells[i].top;
             cells[i] = {
-                value: 9,
-                left: 2,
-                top: 2,
+                value: arrValue.length,
+                left: selectChoice - 1,
+                top: selectChoice - 1,
             }
             // cells.splice(cells[i], 1)
         }
@@ -106,7 +118,7 @@ function generate() {
         // emptiness.top = cells[0].top;
     }
     
-    document.querySelector('#num9').remove()
+    document.querySelector(`#num${arrValue.length}`).remove()
 }
 
 //Секундомер

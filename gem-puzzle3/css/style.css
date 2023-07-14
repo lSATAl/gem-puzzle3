@@ -95,11 +95,11 @@ body {
   height: 400px;
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid #333;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  font-size: 32px;
   font-family: Arial;
   cursor: pointer;
   transition: all ease 0.2s;
