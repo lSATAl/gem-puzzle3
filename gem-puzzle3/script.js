@@ -12,9 +12,15 @@ let numOfCells = selectChoice ** 2;
 let cellSize = 320 / selectChoice;
 let start = document.querySelector('.start');
 let arrValue = [9, 1, 2, 3, 4, 5, 6, 7, 8];
-
+let timerForm = document.querySelector('.timer');
+let count = document.querySelector('.count');
+let step = 0;
 start.addEventListener('click', () => {
+    stoptimer()
     generate();
+    timer();
+    step = 0;
+    count.innerHTML = `Ходы : 0`
 })
 
 // function cellCreate(param) {
@@ -47,6 +53,8 @@ function move(num) {
     if(finish) {
         console.log('win')
     }
+    step++;
+    count.innerHTML = `Ходы : ${step}`
 }
   
 function generate() {
@@ -101,3 +109,49 @@ function generate() {
     document.querySelector('#num9').remove()
 }
 
+//Секундомер
+let tictac;
+let S = '00', M = '00', H = '00';
+let vivod = '';
+function timer(){
+    
+    S = '00';
+    M = '00';
+    H = '00';
+    vivod = '';
+    
+    tictac = setInterval(function(){
+      //Плюсик перед строкой преобразует его в число,мания вне хогвартса
+      S = +S +1;
+      //Если результат меньше 10, прибавляем впереди строку '0'
+      if( S < 10 ) { S = '0' + S; }
+      if( S == 60 ) {
+        S = '00';
+        //Как только секунд стало 60, добавляем +1 к минутам
+        M = +M + 1;
+        //Дальше то же самое, что и для секунд
+        if( M < 10 ) { M = '0' + M; }
+        if( M == 60 ) {
+          //Как только минут стало 60, добавляем +1 к часам.
+          M = '00';
+          H = +H + 1;
+          if( H < 10 ) { H = '0' + H; }
+        }
+      }
+      
+        vivod = H + ':' + M + ':' + S;
+        timerForm.innerHTML = vivod;
+      //Тикает всё через одну функцию, раз в секунду.
+    },1000);
+    
+    
+
+};
+function stoptimer() {
+    clearInterval(tictac);
+    S = '00';
+    M = '00';
+    H = '00';
+    vivod = H + ':' + M + ':' + S;
+    timerForm.innerHTML = "00:00:00"
+}

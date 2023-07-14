@@ -58,10 +58,17 @@ body {
 }
 
 .options {
+  color: #fff;
   height: 50px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.options button {
+  color: #fff;
+}
+.options select {
+  color: #fff;
 }
 
 .optionsItem {
@@ -113,9 +120,9 @@ body {
 }
 
 .size {
+  background: #333;
   display: flex;
   justify-content: center;
-  background: none;
   border: none;
   -moz-text-align-last: center;
        text-align-last: center;

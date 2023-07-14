@@ -50,11 +50,18 @@ body {
     // background-color: #5d9642;
 }
 .options {
+    color: #fff;
     // background-color: #487534;
     height: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    button {
+        color: #fff;
+    }
+    select {
+        color: #fff;
+    }
 }
 .optionsItem {
     width: 100px;
@@ -110,10 +117,11 @@ body {
     border: none;
 }
 .size {
+    background: #333;
     // height: 100px;
     display: flex;
     justify-content: center;
-    background: none;
+    // background: none;
     border: none;
     text-align-last: center;
 }
