@@ -63,8 +63,27 @@ body {
         color: #fff;
 
         option {
-            background: #333;
+            // background: #333;
             color: #fff;
+        }
+        .optVal1 {
+            background: rgba(50, 255, 0, 0.5);
+        }
+        .optVal2 {
+            background: rgba(179, 255, 0, 0.5);
+        }
+        .optVal3 {
+            background: rgba(238, 255, 0, 0.5);
+        }
+        .optVal4 {
+            background: rgba(255, 217, 0, 0.5);
+        }
+        .optVal5 {
+            background: rgba(255, 136, 0, 0.5);
+        }
+        .optVal6 {
+            background: rgba(255, 0, 0, 0.5);
+
         }
     }
 }
