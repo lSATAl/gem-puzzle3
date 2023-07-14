@@ -70,6 +70,10 @@ body {
 .options select {
   color: #fff;
 }
+.options select option {
+  background: #333;
+  color: #fff;
+}
 
 .optionsItem {
   width: 100px;
